@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getaway.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmalla/CS411.git"
+  },
+  "author": "Emily Mallaber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmalla/CS411/issues"
+  },
+  "homepage": "https://github.com/emmalla/CS411#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.6",
+    "request": "^2.88.0"
+  }
+}

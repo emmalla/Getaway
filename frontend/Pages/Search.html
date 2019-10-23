@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BLOCK COMMENT-->
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="../styles/main.css">
+    <title>Travel App CS411</title>
+</head>
+
+<body>
+    <header>
+        <img id="headerImage" src="../images/plane.png" alt="Picture of a Plane" class="responsive">
+            <hgroup>
+				<h1 id="header">CS411 Travel App.</h1>
+            </hgroup>
+    </header>
+
+    <div class="navbar" id="menu">
+        <ul>
+            <li><a href="../411_index.html">Home</a></li>
+            <li><a class="displaying" href="Pages/Search.html">Search</a></li>
+            <li><a href="/s4/">Recommended</a>
+               <ul>
+                    <li><a href="sec3">Africa</a></li>
+                    <li><a href="sec4">Antartica</a></li>
+                    <li><a href="sec4">Asia</a></li>
+                    <li><a href="sec4">Australia</a></li>
+                    <li><a href="sec4">Europe</a></li>
+                    <li><a href="sec1">North America</a></li>
+                    <li><a href="sec2">South America</a></li>
+               </ul>
+            </li>
+            <li><a href="../email.html">Subscribe</a></li>
+        </ul>
+    </div>
+
+	<div class="Searching">
+		<form id="userInput" action="Search.html">
+	   		<h1>Please enter the following information.</h1>
+			<p class="required">From: <input type="text" name="origin" required autofocus placeholder="United States"></p>
+			<p class="required">To: <input type="text" name="destination" required placeholder="Canada"></p>
+
+   		</form>
+
+		<button type="button" onclick="UserAction()">Search</button>
+	</div>
+
+	<p id="apiTest"></p>
+
+	<p id="apiTest2"></p>
+
+
+
+	<footer>
+		<p id="copyright">&copy;2019 Chris-Emio Raymond</p>
+	</footer>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+	function UserAction()
+	{
+
+		originName = document.getElementById("userInput").elements["origin"].value;
+		destinationName = document.getElementById("userInput").elements["destination"].value;
+		var request = new XMLHttpRequest()
+		request.open('GET', 'http://www.dnd5eapi.co/api/classes', true)
+		request.onload = function()
+		{
+  			// begin accessing JSON data here
+			var data = JSON.parse(this.response)
+			offerList = data.results[0].name
+			if (originName == "whatever it is i'm looking for" && destinationName == "whatever destination matches")
+			{
+				document.getElementById("apiTest2").innerHTML = offerList;
+			} else {
+
+				document.getElementById("apiTest2").innerHTML = "This place is not in our data base";
+			}
+
+		}
+		request.send()
+
+	} 
+
+	</script>
+
+</body>
+</html>

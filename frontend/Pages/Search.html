@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../styles/main.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <title>Travel App CS411</title>
 </head>
 
@@ -17,7 +18,7 @@
 
     <div class="navbar" id="menu">
         <ul>
-            <li><a href="../411_index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a class="displaying" href="Pages/Search.html">Search</a></li>
             <li><a href="/s4/">Recommended</a>
                <ul>
@@ -39,13 +40,17 @@
 	   		<h1>Please enter the following information.</h1>
 			<p class="required">From: <input type="text" name="origin" required autofocus placeholder="United States"></p>
 			<p class="required">To: <input type="text" name="destination" required placeholder="Canada"></p>
-
    		</form>
-
-		<button type="button" onclick="UserAction()">Search</button>
+		<button class="test_button" id="buttontest" >Search</button>
+		<table class="table table-bordered" id="tabletest" style="display:none">
+			<tr>
+				<td>Flight Info</td>
+			</tr>
+		</table>
+		<script src="../Scripts/jsonParse.js"></script>
 	</div>
 
-	<p id="apiTest"></p>
+	<h1 id="apiTest"></h1>
 
 	<p id="apiTest2"></p>
 
@@ -55,39 +60,6 @@
 		<p id="copyright">&copy;2019 Chris-Emio Raymond</p>
 	</footer>
 
-
-
-
-
-
-
-	<script type="text/javascript">
-	function UserAction()
-	{
-
-		originName = document.getElementById("userInput").elements["origin"].value;
-		destinationName = document.getElementById("userInput").elements["destination"].value;
-		var request = new XMLHttpRequest()
-		request.open('GET', 'http://www.dnd5eapi.co/api/classes', true)
-		request.onload = function()
-		{
-  			// begin accessing JSON data here
-			var data = JSON.parse(this.response)
-			offerList = data.results[0].name
-			if (originName == "whatever it is i'm looking for" && destinationName == "whatever destination matches")
-			{
-				document.getElementById("apiTest2").innerHTML = offerList;
-			} else {
-
-				document.getElementById("apiTest2").innerHTML = "This place is not in our data base";
-			}
-
-		}
-		request.send()
-
-	} 
-
-	</script>
 
 </body>
 </html>

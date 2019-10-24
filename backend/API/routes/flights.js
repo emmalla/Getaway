@@ -36,4 +36,3 @@ router.get('/:destination', (req, res, next) => {
 })
 
 module.exports = router;
-

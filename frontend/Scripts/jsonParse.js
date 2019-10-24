@@ -23,7 +23,7 @@
 
 
 document.getElementById("buttontest").onclick = function() {
-    $.getJSON( "localhost:3000/flights/"+document.getElementById("userInput").elements["destination"].value, function( data ) {
+    $.getJSON("http://localhost:3000/flights/"+document.getElementById("userInput").elements["destination"].value, function( data ) {
 
         originName = document.getElementById("userInput").elements["origin"].value;
         destinationName = document.getElementById("userInput").elements["destination"].value;

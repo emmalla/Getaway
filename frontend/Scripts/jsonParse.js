@@ -1,9 +1,6 @@
 document.getElementById("buttontest").onclick = function() {
     $.getJSON( 'response.json', function( data ) {
 
-        var test = 0;
-        var lengthTest = data.scheduledFlights.length;
-        // var lengthTest = 34;
 
         originName = document.getElementById("userInput").elements["origin"].value;
         destinationName = document.getElementById("userInput").elements["destination"].value;
@@ -27,9 +24,9 @@ document.getElementById("buttontest").onclick = function() {
             test = 255;
             lengthTest = 17;
         }
+        console.log(test +" "+lengthTest)
 
-        
-        if(data.scheduledFlights.length == 0 && destinationName == data.scheduledFlights[0].arrivalAirportFsCode)
+        if(data.scheduledFlights.length == 0 && destinationName == data.scheduledFlights[test].arrivalAirportFsCode)
         {
             document.getElementById("apiTest2").innerHTML = "There aren't any scheduled flights at this time";
         } else if (originName == data.scheduledFlights[test].departureAirportFsCode && destinationName == data.scheduledFlights[test].arrivalAirportFsCode)
@@ -37,7 +34,7 @@ document.getElementById("buttontest").onclick = function() {
             //Set apiTest to list out flight info
             document.getElementById("apiTest").innerHTML = "Flight Info";
             document.getElementById("apiTest2").innerHTML = "";
-            for (var i = 0; i < lengthTest; i++) {
+            for (var i = test; i < lengthTest+test; i++) {
                 // Create a p and set the text content to the flight info
                 flightnumber = data.scheduledFlights[i].flightNumber
                 var fnp = document.createElement("P");
@@ -66,13 +63,13 @@ document.getElementById("buttontest").onclick = function() {
                 document.getElementById("apiTest2").appendChild(separator)
 
                 //This is for debbuging
-                // console.log( i + " flight number is " + flightnumber);
-                // console.log( i + " departure time is " + departureTime);
-                // console.log( i + " departure terminal is " + departureTerminal);
-                // console.log( i + " arrival time is " + arrivalTime);
-                // console.log( i + " arrival terminal is " + arrivalTerminal);
-                // console.log(data.scheduledFlights[i].departureAirportFsCode);
-                // console.log(data.scheduledFlights[i].arrivalAirportFsCode);
+                console.log( i + " flight number is " + flightnumber);
+                console.log( i + " departure time is " + departureTime);
+                console.log( i + " departure terminal is " + departureTerminal);
+                console.log( i + " arrival time is " + arrivalTime);
+                console.log( i + " arrival terminal is " + arrivalTerminal);
+                console.log(data.scheduledFlights[i].departureAirportFsCode);
+                console.log(data.scheduledFlights[i].arrivalAirportFsCode);
 
 
             }

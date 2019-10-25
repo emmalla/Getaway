@@ -22,6 +22,12 @@ router.get('/:destination', (req, res, next) => {
             'Cache-Control': 'no-cache',
             Accept: '*/*',
             'User-Agent': 'PostmanRuntime/7.18.0'
+
+            // 'Access-Control-Allow-Origin': '*',
+            // 'Access-Control-Allow-Origin': 'http://localhost:3000/flights/LHR',
+            // 'Access-Control-Allow-Credentials': 'true',
+            // Access-Control-Expose-Headers: FooBar,
+            // Content-Type: text/html; charset=utf-8
         },
         json:true
     };

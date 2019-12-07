@@ -1,5 +1,8 @@
+const express = require('express');
+const router = express.Router();
 var request = require("request");
 
+router.get('/',(req, res, next) => {
 var options = { method: 'GET',
   url: 'http://iatageo.com/getCode/' + req.session.lat + '/' + req.session.lon,
   headers: 
@@ -17,3 +20,7 @@ request(options, function (error, response, body) {
 
   console.log(body);
 });
+
+});
+
+module.exports = router;

@@ -21,7 +21,9 @@ app.listen(port);
 const flightRoutes = require('./API/routes/flights');
 const OAuth = require('./API/routes/google');
 const callbacks = require('./API/routes/callback');
+const where2 = require('./API/routes/where');
 
 app.use('/flights', flightRoutes);
 app.use('/signin', OAuth);
 app.use('/callback', callbacks);
+app.use('/where', where2);

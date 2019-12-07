@@ -11,8 +11,8 @@ var options = { method: 'POST',
   url: 'https://oauth2.googleapis.com/token',
   qs: 
    { code: req.query.code,
-     client_id: '???',
-     client_secret: '???',
+    client_id: '75524538942-olq5psks55sbrkg18udgr7m3i95lau6i.apps.googleusercontent.com',
+    client_secret: '6VLFL6opiMvPT85jrPX7KfAz',
      redirect_uri: 'http://localhost:3000/callback',
      grant_type: 'authorization_code' },
   headers: 

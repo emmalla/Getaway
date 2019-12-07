@@ -3,6 +3,8 @@ const router = express.Router();
 var request = require("request");
 
 
+
+
 router.get('/:destination', (req, res, next) => {
     var go_url =  'https://api.flightstats.com/flex/schedules/rest/v1/json/from/BOS/to/' + req.params.destination + '/departing/2019/10/25';
     var options = {
@@ -21,13 +23,6 @@ router.get('/:destination', (req, res, next) => {
             'Postman-Token': 'b8077019-7177-42e9-b74a-142b5d8de866,b4c73878-8aab-4ac1-b612-8622d84308b2',
             'Cache-Control': 'no-cache',
             Accept: '*/*',
-            'User-Agent': 'PostmanRuntime/7.18.0'
-
-            // 'Access-Control-Allow-Origin': '*',
-            // 'Access-Control-Allow-Origin': 'http://localhost:3000/flights/LHR',
-            // 'Access-Control-Allow-Credentials': 'true',
-            // Access-Control-Expose-Headers: FooBar,
-            // Content-Type: text/html; charset=utf-8
         },
         json:true
     };

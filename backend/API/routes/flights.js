@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 var request = require("request");
 
-
+// make sure all is well push
 
 
 router.get('/:destination', (req, res, next) => {

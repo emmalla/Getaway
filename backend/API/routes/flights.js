@@ -3,6 +3,8 @@ const router = express.Router();
 var request = require("request");
 
 
+
+
 router.get('/:destination', (req, res, next) => {
     var go_url =  'https://api.flightstats.com/flex/schedules/rest/v1/json/from/BOS/to/' + req.params.destination + '/departing/2019/10/25';
     var options = {

@@ -23,8 +23,6 @@ router.get('/:destination', (req, res, next) => {
             'Postman-Token': 'b8077019-7177-42e9-b74a-142b5d8de866,b4c73878-8aab-4ac1-b612-8622d84308b2',
             'Cache-Control': 'no-cache',
             Accept: '*/*',
-            'User-Agent': 'PostmanRuntime/7.18.0',
-            'Access-Control-Allow-Origin': '*'
         },
         json:true
     };
@@ -39,4 +37,3 @@ router.get('/:destination', (req, res, next) => {
 })
 
 module.exports = router;
-

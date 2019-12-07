@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BLOCK COMMENT-->
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="styles/main.css">
+    <title>G3TAWAY</title>
+</head>
+<body>
+    <header>
+        <img id="headerImage" src="images/plane.png" alt="Picture of a Plane" class="responsive">
+            <hgroup>
+				<h1 id="header">G3TAWAY</h1>
+            </hgroup>
+    </header>
+
+    <div class="navbar" id="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Pages/Search.html">Search</a></li>
+			<li><a href="/s4/">Activities</a>
+               <ul>
+                    <li><a href="sec3">Nature</a></li>
+                    <li><a href="sec4">Museums</a></li>
+                    <li><a href="sec4">Shows</a></li>
+                    <li><a href="sec4">History</a></li>
+                    <li><a href="sec4">Active</a></li>
+               </ul>
+            </li>
+            <li><a class="displaying" href="email.html">Subscribe</a></li>
+        </ul>
+    </div>
+
+	<div class="Subscribe">
+		<form action="subscribe.html">
+	   		<h1>Please enter the following information.</h1>
+			<p class="required">First Name: <input type="text" name="firstName" required autofocus placeholder="John"></p>
+			<p class="required">Last Name: <input type="text" name="lastName" required placeholder="Doe"></p>
+	   		<p class="required">E-Mail: <input type="email" name="email" required placeholder="example@email.com"></p>
+			<p>Zipcode: <input type="text" name="zipcode" pattern="[0-9]{5}" maxlength="5" placeholder="Optional: 99999"></p>
+	   		<p><input id="submitButton" type="submit" name="submit" value="Subscribe"></p>
+   		</form>
+	</div>
+
+
+
+    <footer>
+        <p id="copyright">&copy;2019 Chris-Emio Raymond</p>
+    </footer>
+
+
+</body>
+
+
+</html>

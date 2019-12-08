@@ -56,7 +56,7 @@ request(options, function (error, response, body) {
   
   res.redirect("http://localhost:3001");
   req.session.name = body.names[0].displayName;
- //req.session.email = body.emailAddresses[0].value;
+  req.session.email = body.emailAddresses[0].value;
 });
 
 });

@@ -13,7 +13,7 @@
 // console.log("ID Token: " + id_token);
 // }
 
-document.getElementById("lol").onclick = function() {
+    /*console.log("we got here");
     const Http = new XMLHttpRequest();
     const url='http://localhost:3000/signin';
     Http.open("GET", url);
@@ -23,5 +23,6 @@ document.getElementById("lol").onclick = function() {
       console.log(Http.responseText)
     }
 
+*/
 
-}
+

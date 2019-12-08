@@ -52,9 +52,11 @@ request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
   console.log(body);
+  console.log(body.emailAddresses)
   
-  res.send(body);
-  
+  res.redirect("http://localhost:3001");
+  req.session.name = body.names[0].displayName;
+ //req.session.email = body.emailAddresses[0].value;
 });
 
 });

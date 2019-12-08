@@ -19,7 +19,7 @@ const airport = require('./API/routes/airport');
 
 app.use(cors());
 app.use(session({
-    'secret' : 'loliwannadie'
+    'secret' : 'p9o8i7u6hyg5t4r3e2w'
 }))
 app.use('/flights', flightRoutes);
 app.use('/signin', OAuth);

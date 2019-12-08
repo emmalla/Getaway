@@ -11,13 +11,14 @@ var request = require("request");
 
 
 router.get('/nature',(req, res, next) => {
+  
     var options = { method: 'GET',
   url: 'http://api.opentripmap.com/0.1/en/places/bbox',
   qs: 
    { lon_min: '30',
      lat_min: '-15',
      lon_max: '75',
-     lat_max: '75',
+     lat_max: '30',
      kinds: 'natural',
      format: 'json',
      apikey: '5ae2e3f221c38a28845f05b6680bb28f85eb9d9eedd9330416422bf5' },
@@ -34,9 +35,16 @@ router.get('/nature',(req, res, next) => {
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
   var randomnumber=Math.floor(Math.random()*501);
+  
+  console.log(body[randomnumber]);
+  req.session.lat = body[randomnumber].point.lat;
+  req.session.lon = body[randomnumber].point.lon;
+  req.session.save();
+  console.log(req.session.lat)
+  console.log(req.session.lon)
+  console.log(req.session.id)
   res.status(200).json(body[randomnumber]);
 
-  console.log(body);
 });
 
 
@@ -133,6 +141,7 @@ request(options, function (error, response, body) {
   res.status(200).json(body[randomnumber]);
 
   console.log(body);
+  
 });
 
   })
@@ -167,6 +176,10 @@ request(options, function (error, response, body) {
   res.status(200).json(body[randomnumber]);
 
   console.log(body);
+  req.session.lat = body.point.lat;
+  req.session.lon = body.point.lon;
+  console.log(req.session.lat)
+  console.log(req.session.lon)
 });
 
   });

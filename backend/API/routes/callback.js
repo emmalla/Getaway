@@ -54,10 +54,13 @@ request(options, function (error, response, body) {
   console.log(body);
   console.log(body.emailAddresses)
   
-  res.redirect("http://localhost:3001");
+  
   req.session.name = body.names[0].displayName;
   req.session.email = body.emailAddresses[0].value;
+  req.session.save();
+  res.redirect("http://localhost:3001");
 });
+console.log(req.session);
 
 });
 

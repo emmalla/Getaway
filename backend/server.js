@@ -3,9 +3,13 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 
-
 const cors = require('cors');
 const port = 3000;
+
+app.use(cors());
+app.use(session({
+    'secret' : 'p9o8i7u6hyg5t4r3e2w'
+}))
 
 app.listen(port);
 
@@ -17,10 +21,7 @@ const callbacks = require('./API/routes/callback');
 const where2 = require('./API/routes/where');
 const airport = require('./API/routes/airport');
 
-app.use(cors());
-app.use(session({
-    'secret' : 'p9o8i7u6hyg5t4r3e2w'
-}))
+
 app.use('/flights', flightRoutes);
 app.use('/signin', OAuth);
 app.use('/callback', callbacks);

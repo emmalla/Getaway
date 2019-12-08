@@ -9,8 +9,8 @@ Mongoose.connect("mongodb+srv://ejaysing:cs411@cs411-mw1ai.mongodb.net/test?retr
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
-app.listen(3000, () => {
-    console.log("Listening at :3000...");
+app.listen(3002, () => {
+    console.log("Listening at :3002...");
 });
 
 const User = Mongoose.model("person", {

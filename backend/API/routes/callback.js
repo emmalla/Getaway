@@ -53,7 +53,7 @@ request(options, function (error, response, body) {
 
   console.log(body);
   
-  res.send("Congratulations, authenticated user " + body.names[0].displayName + "!");
+  res.send(body);
   
 });
 

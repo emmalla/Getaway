@@ -1,6 +1,8 @@
 
 const express = require('express');
 const app = express();
+const session = require('express-session');
+
 
 const cors = require('cors');
 const port = 3000;
@@ -15,6 +17,9 @@ const where2 = require('./API/routes/where');
 const airport = require('./API/routes/airport');
 
 app.use(cors());
+app.use(session({
+    'secret' = 
+}))
 app.use('/flights', flightRoutes);
 app.use('/signin', OAuth);
 app.use('/callback', callbacks);

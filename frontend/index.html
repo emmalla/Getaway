@@ -3,9 +3,13 @@
 <!-- BLOCK COMMENT-->
 <head>
 	<meta charset="utf-8" />
+	<meta name="google-signin-scope" content="profile email">
+   	<meta name="google-signin-client_id" content="406795714892-knmqmeeava6o94hi63nfcndue4blpim1.apps.googleusercontent.com">
+   	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<link rel="stylesheet" href="styles/main.css">
     <title>G3TAWAY</title>
 </head>
+
 <body>
     <header>
         <img id="headerImage" src="images/plane.png" alt="Picture of a Plane" class="responsive">
@@ -56,16 +60,20 @@
 	    <input id="passwordHome" type="password" placeholder="Enter Password" name="psw" required>
 
 	    <button id="homeSubmitButton">Login</button>
+		<div id="googleLogin" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"><script src="../Scripts/onSignIn.js"></script></div>
 	    <label>
 	      <input type="checkbox" checked="checked" name="remember"> Remember me
 	    </label>
 	  </div>
-
 	  <div class="container" style="background-color:#f1f1f1">
 	    <button id="homeCancelButton" type="button" class="cancelbtn">Cancel</button>
 	    <span class="psw">Forgot <a href="#">password?</a></span>
 	  </div>
 	</form>
+
+
+
+
 
 
     <footer>

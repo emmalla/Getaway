@@ -1,25 +1,13 @@
-// const http = require('http');
-// const express = require('express');
-const cors = require('cors');
-// const mongoose = require('mongoose');
-
-
-
-// require('dotenv').config();
-
-
-const port = 3000;
-
-// const server = http.createServer(app);
-
-//server.listen(port);
 
 const express = require('express');
 const app = express();
+
+const cors = require('cors');
+const port = 3000;
+
 app.listen(port);
 
 const flightRoutes = require('./API/routes/flights');
-
 const OAuth = require('./API/routes/google');
 const callbacks = require('./API/routes/callback');
 const where2 = require('./API/routes/where');

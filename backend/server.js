@@ -9,6 +9,7 @@ const port = 3000;
 
 app.listen(port);
 
+//sessions??
 
 const flightRoutes = require('./API/routes/flights');
 const OAuth = require('./API/routes/google');

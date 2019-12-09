@@ -1,4 +1,4 @@
-$.getJSON( "http://localhost:3000/flights/LHR", function( data ) {
+$.getJSON( "http://localhost:3000/flights/", function( data ) {
     document.getElementById("Header").innerHTML = "Flight Info";
 
     for (var i = 0; i < 15; i++) {
@@ -7,13 +7,13 @@ $.getJSON( "http://localhost:3000/flights/LHR", function( data ) {
         dtimep.innerHTML = "Departure time is " + departureTime;
         departureTerminal = data.AirlineFlightSchedulesResult.data[i].origin
         var dterminalp = document.createElement("P");
-        dterminalp.innerHTML = "Departure terminal is " + departureTerminal;
+        dterminalp.innerHTML = "Departure airport is " + departureTerminal;
         arrivalTime = data.AirlineFlightSchedulesResult.data[i].arrivaltime
         var atimep = document.createElement("P");
         atimep.innerHTML = "Arrival time is " + arrivalTime;
         arrivalTerminal = data.AirlineFlightSchedulesResult.data[i].destination
         var aterminalp = document.createElement("P");
-        aterminalp.innerHTML = "Arrival terminal is " + arrivalTerminal;
+        aterminalp.innerHTML = "Arrival airport is " + arrivalTerminal;
 
 
         var separator = document.createElement("P");

@@ -3,9 +3,6 @@
 <!-- BLOCK COMMENT-->
 <head>
 	<meta charset="utf-8" />
-	<meta name="google-signin-scope" content="profile email">
-   	<meta name="google-signin-client_id" content="406795714892-knmqmeeava6o94hi63nfcndue4blpim1.apps.googleusercontent.com">
-   	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<link rel="stylesheet" href="styles/main.css">
     <title>G3TAWAY</title>
 </head>
@@ -45,9 +42,9 @@
 	</div>
 
 
-	<h2>Login Form</h2>
+	<!-- <h2>Login Form</h2>
 
-	<form id="homeForm" action="/action_page.php" method="post">
+	<form id="homeForm" action="#" method="post">
 	  <div class="imgcontainer">
 	    <img src="images/login_avatar.png" alt="Avatar" class="avatar">
 	  </div>
@@ -60,23 +57,22 @@
 	    <input id="passwordHome" type="password" placeholder="Enter Password" name="psw" required>
 
 	    <button id="homeSubmitButton">Login</button>
-		<!-- <div id="googleLogin" class="g-signin2" data-theme="dark">
-			<script src="../Scripts/onSignIn.js"></script>
-		</div> -->
 
-		<p><a href="http://localhost:3000/signin">Sign in With Google!</a></p>
-
-		<!--<button id="lol"  type="button" name="test">test</button> -->
-		<script src="Scripts/onSignIn.js"></script>
 	    <label>
 	      <input type="checkbox" checked="checked" name="remember"> Remember me
 	    </label>
 	  </div>
+
 	  <div class="container" style="background-color:#f1f1f1">
 	    <button id="homeCancelButton" type="button" class="cancelbtn">Cancel</button>
 	    <span class="psw">Forgot <a href="#">password?</a></span>
 	  </div>
-	</form> 
+	</form> -->
+
+
+	<form action="http://localhost:3000/signin">
+    	<button id="googleSubmitButton">Login with Google</button>
+	</form>
 
 
 

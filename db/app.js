@@ -15,12 +15,7 @@ app.listen(3002, () => {
 
 const User = Mongoose.model("person", {
   name: String,
-  email: String,
-  location1: Object,
-  location2: Object,
-  location3: Object,
-  location4: Object,
-  location5: Object
+  email: String
 });
 
 app.post("/person", async (request, response, next) => {

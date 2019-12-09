@@ -3,9 +3,11 @@
 <!-- BLOCK COMMENT-->
 <head>
 	<meta charset="utf-8" />
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<link rel="stylesheet" href="styles/main.css">
     <title>G3TAWAY</title>
 </head>
+
 <body>
     <header>
         <img id="headerImage" src="images/plane.png" alt="Picture of a Plane" class="responsive">
@@ -16,18 +18,17 @@
 
     <div class="navbar" id="menu">
         <ul>
-			<li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
 			<li><a href="userPage.html">New Trip</a></li>
-            <li><a class="displaying" href="email.html">Subscribe</a></li>
+            <li><a class="displaying" href="go.html">Flights</a></li>
         </ul>
     </div>
 
-	<div class="Joined">
-		<h1>Thank you for joining our mailing list!</h1>
-		<p>You will be hearing from me soon. In the meantime, please feel free to browse through my site.</p>
-	</div>
+	<script src="../Scripts/callFlightAPI.js"></script>
 
+	<h1 id="Header"></h1>
 
+	<p id="Info"></p>
 
     <footer>
         <p id="copyright">&copy;2019 Chris-Emio Raymond</p>
@@ -35,6 +36,4 @@
 
 
 </body>
-
-
 </html>

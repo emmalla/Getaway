@@ -34,18 +34,24 @@
     </div>
 
 	<div class="Searching">
-		<form id="userInput" action="Search.html">
+		<!-- <form id="userInput" action="Search.html">
 	   		<h1>Please enter the following information.</h1>
 			<p class="required">From: <input type="text" name="origin" required autofocus placeholder="United States"></p>
 			<p class="required">To: <input type="text" name="destination" required placeholder="Canada"></p>
-   		</form>
-		<button class="test_button" id="buttontest" >Search</button>
+   		</form> -->
+
+
+		<form action="http://localhost:3000/flights">
+	    	<button >get flights</button>
+		</form>
+
+
 		<table class="table table-bordered" id="tabletest" style="display:none">
 			<tr>
 				<td>Flight Info</td>
 			</tr>
 		</table>
-		<script src="../Scripts/jsonParse.js"></script>
+		<!-- <script src="../Scripts/jsonParse.js"></script> -->
 	</div>
 
 	<h1 id="apiTest"></h1>

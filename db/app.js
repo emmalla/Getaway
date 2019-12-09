@@ -25,9 +25,16 @@ const User = Mongoose.model("person", {
 
 app.post("/person", async (request, response, next) => {
   try {
-    var person = new User(request.body);
-    var result = await person.save();
-    response.send(result);
+//    var person = new User(request.body);
+//    var result = await person.save();
+    var user = await User.findOne({email: request.body.email});
+    if (user) {
+      response.status(400).send("Email already in use!");
+    } else {
+      var person = new User(request.body);
+      var result = await person.save();
+      response.send(result);
+    }
   } catch (error) {
     response.status(500).send(error);
   }
@@ -42,18 +49,18 @@ app.get("/people", async (request, response, next) => {
   }
 });
 
-app.get("/person/:id", async (request, response, next) => {
+app.get("/person/:email", async (request, response, next) => {
   try {
-    var person = await User.findById(request.params.id).exec();
+    var person = await User.findOne({email: request.params.email}).exec();
     response.send(person);
   } catch (error) {
     response.status(500).send(error);
   }
 });
 
-app.put("/person/:id", async (request, response, next) => {
+app.put("/person/:email", async (request, response, next) => {
   try {
-    var person = await User.findById(request.params.id).exec();
+    var person = await User.findOne({email: request.params.email}).exec();
     person.set(request.body);
     var result = await person.save();
     response.send(result);

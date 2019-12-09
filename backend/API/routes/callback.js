@@ -60,27 +60,27 @@ request(options, function (error, response, body) {
   req.session.save();
 
 
-var options = { method: 'POST',
-  url: 'http://localhost:3002/person',
-  headers: 
-   { 'cache-control': 'no-cache',
-     Connection: 'keep-alive',
-     Cookie: 'connect.sid=s%3AA7SbFSCni63RiWhvdiuhPJ58yFcE8k4_.UrKKwJl68lH2A5P1pIacUQFV6VEM%2BSsSXbC%2BKkgsO8o',
-     'Content-Length': '55',
-     Host: 'localhost:3002',
-     'Postman-Token': 'feb33d5d-f760-4e9b-9481-7fd4361d2886,7922e7be-338a-4d78-abec-b158fb2a9375',
-     'Cache-Control': 'no-cache',
-     Accept: '*/*',
-     'User-Agent': 'PostmanRuntime/7.20.1',
-     'Content-Type': 'application/json' },
-  body: { name: req.session.name, email: req.session.email},
-  json: true };
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
+  var options = { method: 'POST',
+    url: 'http://localhost:3002/person',
+    headers: 
+     { 'cache-control': 'no-cache',
+       Connection: 'keep-alive',
+       Cookie: 'connect.sid=s%3AA7SbFSCni63RiWhvdiuhPJ58yFcE8k4_.UrKKwJl68lH2A5P1pIacUQFV6VEM%2BSsSXbC%2BKkgsO8o',
+       'Content-Length': '65',
+       Host: 'localhost:3002',
+       'Postman-Token': 'f4e10bc3-ffc6-4156-8277-f1e7dfb174cb,dab40af8-46a6-4389-a8e5-4baeefc6567d',
+       'Cache-Control': 'no-cache',
+       Accept: '*/*',
+       'User-Agent': 'PostmanRuntime/7.20.1',
+       'Content-Type': 'application/json' },
+    body: ( {name: req.session.name, 
+    email: req.session.email }),
+    json: true };
+    console.log(options.body)
+  
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+  });
 
   res.redirect("http://localhost:3001");
 

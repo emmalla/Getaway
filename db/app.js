@@ -15,13 +15,18 @@ app.listen(3002, () => {
 
 const User = Mongoose.model("person", {
   name: String,
-  email: String
+  email: String,
+
 });
 
 app.post("/person", async (request, response, next) => {
   try {
     var user = await User.findOne({email: request.body.email});
+    console.log(request.body.email);
+    console.log(request.body);
     if (user) {
+      console.log("the thing below this")
+    console.log(user);
       response.status(400).send("Email already in use!");
     } else {
       var person = new User(request.body);

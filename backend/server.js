@@ -6,7 +6,12 @@ const session = require('express-session');
 const cors = require('cors');
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+    origin: true,
+    credentials: true,
+    preflightContinue: true
+}));;
+
 app.use(session({
     'secret' : 'p9o8i7u6hyg5t4r3e2w'
 }))

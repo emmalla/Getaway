@@ -20,8 +20,6 @@ const User = Mongoose.model("person", {
 
 app.post("/person", async (request, response, next) => {
   try {
-//    var person = new User(request.body);
-//    var result = await person.save();
     var user = await User.findOne({email: request.body.email});
     if (user) {
       response.status(400).send("Email already in use!");

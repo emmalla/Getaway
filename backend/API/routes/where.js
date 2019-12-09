@@ -46,6 +46,7 @@ request(options, function (error, response, body) {
   res.status(200).json(body[randomnumber]);
 
 });
+});
 
 
   router.get('/museums',(req, res, next) => {
@@ -68,6 +69,7 @@ request(options, function (error, response, body) {
      Accept: '*/*',
      'User-Agent': 'PostmanRuntime/7.20.1' },
      json:true };
+     console.log('hello darkness');
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
@@ -82,7 +84,8 @@ request(options, function (error, response, body) {
   res.status(200).json(body[randomnumber]);
 });
 
-  })
+  });
+
   
 
   router.get('/shows',(req, res, next) => {
@@ -197,9 +200,9 @@ request(options, function (error, response, body) {
   console.log(req.session.id)
   res.status(200).json(body[randomnumber]);
 });
+ });
 
-  });
-});
+
 
 module.exports = router;
 

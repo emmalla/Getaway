@@ -26,7 +26,8 @@ var options = { method: 'GET',
      Accept: '*/*',
      'User-Agent': 'PostmanRuntime/7.20.1',
      Authorization: 'Basic ZW1tYWxsYTpiMTlkZjQ0Y2Q4Nzk0NjIyYTQ5ZDhhOWNjYTFiNzhmNmEwMjYzM2Jl',
-     'Content-Type': 'application/json' } };
+     'Content-Type': 'application/json' } ,
+    json:true};
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);

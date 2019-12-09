@@ -235,6 +235,16 @@
      width: 100%;
    }
 
+   #googleSubmitButton {
+     background-color: #f44336;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     cursor: pointer;
+     width: 100%;
+   }
+
    #homeCancelButton {
      color: white;
      margin: 8px 0;

@@ -5,7 +5,7 @@ var request = require("request");
 
 var code = "";
 
-/* router.get('/LHR', (req, res, next) => {
+router.get('/LHR', (req, res, next) => {
     console.log(code)
     console.log("got here")
     var go_url =  'https://api.flightstats.com/flex/schedules/rest/v1/json/from/BOS/to/LHR/departing/2019/12/11'
@@ -36,7 +36,7 @@ var code = "";
         res.status(200).json(body)
     });
 });
- */
+ 
 
 router.get('/',(req, res, next) => {
   console.log(req.session.id)

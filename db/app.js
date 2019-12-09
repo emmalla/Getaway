@@ -6,8 +6,8 @@ var app = Express();
 
 Mongoose.connect("mongodb+srv://ejaysing:cs411@cs411-mw1ai.mongodb.net/test?retryWrites=true&w=majority");
 
-app.use(BodyParser.json());
-app.use(BodyParser.urlencoded({ extended: true }));
+// app.use(BodyParser.json());
+// app.use(BodyParser.urlencoded({ extended: true }));
 
 app.listen(3002, () => {
     console.log("Listening at :3002...");
@@ -19,23 +19,26 @@ const User = Mongoose.model("person", {
 
 });
 
+
 app.post("/person", async (request, response, next) => {
+
   try {
-    var user = await User.findOne({email: request.body.email});
-    console.log(request.body.email);
-    console.log(request.body);
-    if (user) {
-      console.log("the thing below this")
-    console.log(user);
-      response.status(400).send("Email already in use!");
-    } else {
-      var person = new User(request.body);
-      var result = await person.save();
-      response.send(result);
-    }
+    console.log(request.query.name);
+    var person = new User({
+      name: request.query.name,
+      email: request.query.email
+    });
+    console.log(person);
+    var result = await person.save();
+
+    response.send(result);
+
   } catch (error) {
+
     response.status(500).send(error);
+
   }
+
 });
 
 app.get("/people", async (request, response, next) => {

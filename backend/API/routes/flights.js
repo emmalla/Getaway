@@ -34,6 +34,7 @@ request(options, function (error, response, body) {
   console.log(body);
   res.status(200).json(body);
 });
+});
 
  
 
@@ -74,7 +75,7 @@ var options = { method: 'GET',
   qs: 
    { startDate: '1576007032',
      endDate: '1576093432',
-     origin: 'BOS',
+     origin: 'LGA',
      destination: code,
      howMany: '15',
      offset: '0' },
@@ -97,7 +98,5 @@ request(options, function (error, response, body) {
 });
 
 });
-});
-//hi
 
 module.exports = router;

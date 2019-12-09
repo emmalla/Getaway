@@ -6,36 +6,35 @@ var request = require("request");
 var code = "";
 
 router.get('/LHR', (req, res, next) => {
-    console.log(code)
-    console.log("got here")
-    var go_url =  'https://api.flightstats.com/flex/schedules/rest/v1/json/from/BOS/to/LHR/departing/2019/12/11'
-    var options = {
-        method: 'GET',
-        url: go_url,
-        qs:
-        {
-            appId: 'b8b20992',
-            appKey: 'c2a78b3617c7e40265cb7c06e964aa65'
-        },
-        headers:
-        {
-            'cache-control': 'no-cache',
-            Connection: 'keep-alive',
-            Host: 'api.flightstats.com',
-            'Postman-Token': 'b8077019-7177-42e9-b74a-142b5d8de866,b4c73878-8aab-4ac1-b612-8622d84308b2',
-            'Cache-Control': 'no-cache',
-            
-        },
-        json:true
-    };
+    var request = require("request");
 
-    request(options, function (error, response, body) {
-        if (error) throw new Error(error);
+var options = { method: 'GET',
+  url: 'http://flightxml.flightaware.com/json/FlightXML2/AirlineFlightSchedules',
+  qs: 
+   { startDate: '1576007032',
+     endDate: '1576093432',
+     origin: 'BOS',
+     destination: 'LHR',
+     howMany: '15',
+     offset: '0' },
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     Host: 'flightxml.flightaware.com',
+     'Postman-Token': '25e52a65-89e0-4272-b478-0d1b659f31a8,3394a9da-d9ec-4de9-b034-2455a544fa12',
+     'Cache-Control': 'no-cache',
+     Accept: '*/*',
+     'User-Agent': 'PostmanRuntime/7.20.1',
+     Authorization: 'Basic ZW1tYWxsYTpiMTlkZjQ0Y2Q4Nzk0NjIyYTQ5ZDhhOWNjYTFiNzhmNmEwMjYzM2Jl',
+     'Content-Type': 'application/json' } };
 
-        console.log(body);
-        res.status(200).json(body)
-    });
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+  res.status(200).json(body);
 });
+
  
 
 router.get('/',(req, res, next) => {
@@ -68,36 +67,36 @@ request(options, function (error, response, body) {
 
 
 router.get('/go', (req, res, next) => {
-    console.log(code)
-    console.log("got here")
-    var go_url =  'https://api.flightstats.com/flex/schedules/rest/v1/json/from/BOS/to/' + code + '/departing/2019/12/11'
-    var options = {
-        method: 'GET',
-        url: go_url,
-        qs:
-        {
-            appId: 'b8b20992',
-            appKey: 'c2a78b3617c7e40265cb7c06e964aa65'
-        },
-        headers:
-        {
-            'cache-control': 'no-cache',
-            Connection: 'keep-alive',
-            Host: 'api.flightstats.com',
-            'Postman-Token': 'b8077019-7177-42e9-b74a-142b5d8de866,b4c73878-8aab-4ac1-b612-8622d84308b2',
-            'Cache-Control': 'no-cache',
-            Accept: '*/*',
-        },
-        json:true
-    };
+    var request = require("request");
 
-    request(options, function (error, response, body) {
-        if (error) throw new Error(error);
+var options = { method: 'GET',
+  url: 'http://flightxml.flightaware.com/json/FlightXML2/AirlineFlightSchedules',
+  qs: 
+   { startDate: '1576007032',
+     endDate: '1576093432',
+     origin: 'BOS',
+     destination: code,
+     howMany: '15',
+     offset: '0' },
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     Host: 'flightxml.flightaware.com',
+     'Postman-Token': '25e52a65-89e0-4272-b478-0d1b659f31a8,3394a9da-d9ec-4de9-b034-2455a544fa12',
+     'Cache-Control': 'no-cache',
+     Accept: '*/*',
+     'User-Agent': 'PostmanRuntime/7.20.1',
+     Authorization: 'Basic ZW1tYWxsYTpiMTlkZjQ0Y2Q4Nzk0NjIyYTQ5ZDhhOWNjYTFiNzhmNmEwMjYzM2Jl',
+     'Content-Type': 'application/json' } };
 
-        console.log(body);
-        res.status(200).json(body)
-    });
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-})
+  console.log(body);
+  res.status(200).json(body);
+});
+
+});
+});
 
 module.exports = router;

@@ -64,9 +64,9 @@ app.put("/person/:email", async (request, response, next) => {
   }
 });
 
-app.delete("/person/:id", async (request, response, next) => {
+app.delete("/person/:email", async (request, response, next) => {
   try {
-    var result = await User.deleteOne({ _id: request.params.id }).exec();
+    var result = await User.deleteOne({email: request.params.email}).exec();
     response.send(result);
   } catch (error) {
     response.status(500).send(error);

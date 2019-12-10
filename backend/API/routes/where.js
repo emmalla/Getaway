@@ -43,6 +43,28 @@ request(options, function (error, response, body) {
   console.log(req.session.lat)
   console.log(req.session.lon)
   console.log(req.session.id)
+  var options = { method: 'PUT',
+  url: 'http://localhost:3002/person/' + req.session.email,
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     'Content-Length': '255',
+     'Accept-Encoding': 'gzip, deflate',
+     Host: 'localhost:3002',
+     'Postman-Token': 'ed8b65e3-6ae5-424e-86e7-8c9b599ad4cc,4317cf26-ae46-40e7-add6-5aee9f61cdc3',
+     'Cache-Control': 'no-cache',
+     Accept: '/',
+     'User-Agent': 'PostmanRuntime/7.18.0',
+     'Content-Type': 'application/json' },
+  body: 
+   { loc: body[randomnumber] },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+  console.log("hi")
+  console.log(body);
+});
   res.status(200).json(body[randomnumber]);
 
 });
@@ -81,6 +103,28 @@ request(options, function (error, response, body) {
   console.log(req.session.lat)
   console.log(req.session.lon)
   console.log(req.session.id)
+  var options = { method: 'PUT',
+  url: 'http://localhost:3002/person/' + req.session.email,
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     'Content-Length': '255',
+     'Accept-Encoding': 'gzip, deflate',
+     Host: 'localhost:3002',
+     'Postman-Token': 'ed8b65e3-6ae5-424e-86e7-8c9b599ad4cc,4317cf26-ae46-40e7-add6-5aee9f61cdc3',
+     'Cache-Control': 'no-cache',
+     Accept: '/',
+     'User-Agent': 'PostmanRuntime/7.18.0',
+     'Content-Type': 'application/json' },
+  body: 
+   { loc: body[randomnumber] },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
   res.status(200).json(body[randomnumber]);
 });
 
@@ -119,6 +163,28 @@ request(options, function (error, response, body) {
   console.log(req.session.lat)
   console.log(req.session.lon)
   console.log(req.session.id)
+  var options = { method: 'PUT',
+  url: 'http://localhost:3002/person/' + req.session.email,
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     'Content-Length': '255',
+     'Accept-Encoding': 'gzip, deflate',
+     Host: 'localhost:3002',
+     'Postman-Token': 'ed8b65e3-6ae5-424e-86e7-8c9b599ad4cc,4317cf26-ae46-40e7-add6-5aee9f61cdc3',
+     'Cache-Control': 'no-cache',
+     Accept: '/',
+     'User-Agent': 'PostmanRuntime/7.18.0',
+     'Content-Type': 'application/json' },
+  body: 
+   { loc: body[randomnumber] },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
   res.status(200).json(body[randomnumber]);
 });
 
@@ -157,6 +223,28 @@ request(options, function (error, response, body) {
   console.log(req.session.lat)
   console.log(req.session.lon)
   console.log(req.session.id)
+  var options = { method: 'PUT',
+  url: 'http://localhost:3002/person/' + req.session.email,
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     'Content-Length': '255',
+     'Accept-Encoding': 'gzip, deflate',
+     Host: 'localhost:3002',
+     'Postman-Token': 'ed8b65e3-6ae5-424e-86e7-8c9b599ad4cc,4317cf26-ae46-40e7-add6-5aee9f61cdc3',
+     'Cache-Control': 'no-cache',
+     Accept: '/',
+     'User-Agent': 'PostmanRuntime/7.18.0',
+     'Content-Type': 'application/json' },
+  body: 
+   { loc: body[randomnumber] },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
   res.status(200).json(body[randomnumber]);
 
   
@@ -198,6 +286,28 @@ request(options, function (error, response, body) {
   console.log(req.session.lat)
   console.log(req.session.lon)
   console.log(req.session.id)
+  var options = { method: 'PUT',
+  url: 'http://localhost:3002/person/' + req.session.email,
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     'Content-Length': '255',
+     'Accept-Encoding': 'gzip, deflate',
+     Host: 'localhost:3002',
+     'Postman-Token': 'ed8b65e3-6ae5-424e-86e7-8c9b599ad4cc,4317cf26-ae46-40e7-add6-5aee9f61cdc3',
+     'Cache-Control': 'no-cache',
+     Accept: '/',
+     'User-Agent': 'PostmanRuntime/7.18.0',
+     'Content-Type': 'application/json' },
+  body: 
+   { loc: body[randomnumber] },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
   res.status(200).json(body[randomnumber]);
 });
  });

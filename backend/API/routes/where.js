@@ -2,15 +2,12 @@ const express = require('express');
 const router = express.Router();
 var request = require("request");
 
-//var nature ="natural";
-//var museums = "museums";
-//var shows = "opera_houses, music_venues, other_theatres, circuses";
-//var history = "historical_places, castles, monuments, roman_villas, crypts";
-//var active = "winter_sports, climbing, diving";
+// 5 options based on the 5 types of trips!
+
+// note: lat and long boxes are severely limited due to the api and so this is unfortunately not worldwide
 
 
-
-router.get('/nature',(req, res, next) => {
+router.get('/nature',(req, res, next) => { 
   
     var options = { method: 'GET',
   url: 'http://api.opentripmap.com/0.1/en/places/bbox',
@@ -34,19 +31,15 @@ router.get('/nature',(req, res, next) => {
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
-  //var randomnumber=Math.floor(Math.random()*501);
-  var randomnumber = 3;
-  console.log(body[randomnumber]);
-  req.session.lat = body[randomnumber].point.lat;
+  var randomnumber=Math.floor(Math.random()*501); // api returns 500 destination ideas, choose one randomly
+ 
+  
+  req.session.lat = body[randomnumber].point.lat; // stpre lon/lat details of destination in the session for flight api use
   req.session.lon = body[randomnumber].point.lon;
-  req.session.obj = body[randomnumber];
+  req.session.obj = body[randomnumber]; // store place obj in session for recent history
   req.session.save();
-  console.log(req.session.lat)
-  console.log(req.session.lon)
-  console.log(req.session.id)
-  console.log(req.session)
-  console.log(randomnumber)
-  console.log(body)
+
+
   /*var options = { method: 'PUT',
   url: 'http://localhost:3002/person/' + req.session.email,
   headers: 
@@ -69,8 +62,13 @@ request(options, function (error, response, body) {
   console.log(options.body);
 });
 console.log("made it to the end")*/
-res.status(200).json(body[randomnumber]);
+
+// the goal above was to store recent locations in db, isn't quite working yet but db still stores user data !
+
+res.status(200).json(body[randomnumber]); // pass back the chosen location 
 });
+
+// note : process is the same for each type of trip and so not all are commented in detail like above
 
 
 });
@@ -101,16 +99,13 @@ res.status(200).json(body[randomnumber]);
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
   //var randomnumber=Math.floor(Math.random()*501);
-  var randomnumber = 50
-  console.log(body[randomnumber]);
+  var randomnumber = 50 // this is for demo purposes, simply so we can  be sure that the flight page will be used and not the 'sorry, no flights' page - at least once !
   req.session.lat = body[randomnumber].point.lat;
   req.session.lon = body[randomnumber].point.lon;
   req.session.save();
-  console.log(req.session.lat)
-  console.log(req.session.lon)
-  console.log(req.session.id)
-  console.log(randomnumber)
   
+  // again, the put request to save the last location to DB 
+
   var options = { method: 'PUT',
   url: 'http://localhost:3002/person/' + req.session.email,
   headers: 
@@ -133,11 +128,13 @@ request(options, function (error, response, body) {
 
   console.log(body);
 });
-  res.status(200).json(body[randomnumber]);
+  res.status(200).json(body[randomnumber]); // pass the chosen destination to front end
 });
 
   });
 
+
+  // process is exactly the same for the remaining 3 options ! 
   
 
   router.get('/shows',(req, res, next) => {

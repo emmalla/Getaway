@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 
-// use request-promise in final code! sorry not for demo
+// callback page for after google oauth
 
 var request = require("request");
-var bodytrue = true;
+var bodytrue = true; // variable used to detect new or old user later on
 
 router.get('/', (req, res, next) => {
   var options = {
@@ -68,68 +68,71 @@ router.get('/', (req, res, next) => {
       req.session.email = body.emailAddresses[0].value;
       req.session.save();
       console.log(req.session)
-      var options = { method: 'GET',
-  url: 'http://localhost:3002/person/' + req.session.email,
-  headers: 
-   { 'cache-control': 'no-cache',
-     Connection: 'keep-alive',
-     Cookie: 'connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E',
-     'Content-Length': '59',
-     'Accept-Encoding': 'gzip, deflate',
-     Host: 'localhost:3002',
-     'Postman-Token': '650760c1-b37b-4df9-adfb-eba8e7d24468,f9d8cde4-1d6d-455f-812e-79e49e9eb6ad',
-     'Cache-Control': 'no-cache',
-     Accept: '*/*',
-     'User-Agent': 'PostmanRuntime/7.20.1',
-     'Content-Type': 'application/json' } };
 
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-  console.log('this is body')
-  console.log(body)
-  console.log(bodytrue);
-  if (body == []){
-    bodytrue = false;
-  }else{bodytrue = true}
-  console.log(bodytrue)
-  console.log(body);
-});
-
-if(bodytrue == false) {
+      // check if the user has been here before !
 
       var options = {
-        method: 'POST',
-        url: 'http://localhost:3002/person',
-        qs: {
-          name: req.session.name,
-          email: req.session.email
-        },
+        method: 'GET',
+        url: 'http://localhost:3002/person/' + req.session.email,
         headers:
         {
           'cache-control': 'no-cache',
           Connection: 'keep-alive',
-          Cookie: 'connect.sid=s%3AA7SbFSCni63RiWhvdiuhPJ58yFcE8k4_.UrKKwJl68lH2A5P1pIacUQFV6VEM%2BSsSXbC%2BKkgsO8o',
+          Cookie: 'connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E',
+          'Content-Length': '59',
+          'Accept-Encoding': 'gzip, deflate',
           Host: 'localhost:3002',
-          'Postman-Token': 'feb33d5d-f760-4e9b-9481-7fd4361d2886,7922e7be-338a-4d78-abec-b158fb2a9375',
+          'Postman-Token': '650760c1-b37b-4df9-adfb-eba8e7d24468,f9d8cde4-1d6d-455f-812e-79e49e9eb6ad',
           'Cache-Control': 'no-cache',
           Accept: '*/*',
-          'User-Agent': 'PostmanRuntime/7.20.1'
-        },
-        // body: { "name": req.session.name, "email": req.session.email },
-        json: true
+          'User-Agent': 'PostmanRuntime/7.20.1',
+          'Content-Type': 'application/json'
+        }
       };
+
       request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        console.log("here")
-        console.log(body)
+        
+        if (body == []) {
+          bodytrue = false;
+        } else { bodytrue = true }
+        // update true or false based on past user or new user
+        
       });
-    }
+
+      if (bodytrue == false) { // if user is new, add them to DB !
+
+        var options = {
+          method: 'POST',
+          url: 'http://localhost:3002/person',
+          qs: {
+            name: req.session.name,
+            email: req.session.email
+          },
+          headers:
+          {
+            'cache-control': 'no-cache',
+            Connection: 'keep-alive',
+            Cookie: 'connect.sid=s%3AA7SbFSCni63RiWhvdiuhPJ58yFcE8k4_.UrKKwJl68lH2A5P1pIacUQFV6VEM%2BSsSXbC%2BKkgsO8o',
+            Host: 'localhost:3002',
+            'Postman-Token': 'feb33d5d-f760-4e9b-9481-7fd4361d2886,7922e7be-338a-4d78-abec-b158fb2a9375',
+            'Cache-Control': 'no-cache',
+            Accept: '*/*',
+            'User-Agent': 'PostmanRuntime/7.20.1'
+          },
+          // body: { "name": req.session.name, "email": req.session.email }, // postman code that didnt work 
+          json: true
+        };
+        request(options, function (error, response, body) {
+          if (error) throw new Error(error);
+          console.log("here")
+          console.log(body)
+        });
+      }
     });
-  
+
     console.log(req.session);
   });
-  console.log('this is the session id')
-  console.log(req.session.id)
   res.redirect("http://localhost:3001");
 });
 module.exports = router;

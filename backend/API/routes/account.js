@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 var request = require("request")
 
+// gets user info from DB to pass to front end, via get call
+
 router.get('/', (req, res, next) => {
     var options = {
         method: 'GET',
@@ -34,6 +36,7 @@ router.get('/', (req, res, next) => {
     
 });
 
+//functionality for a delete account button ! 
 
 router.get('/delete', (req, res, next) => {var options = { method: 'DELETE',
 url: 'http://localhost:3002/person/' + req.session.email,

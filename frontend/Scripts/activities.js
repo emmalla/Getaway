@@ -34,6 +34,10 @@ document.getElementById("nature").onclick = function() {
         var x = document.getElementById("goButton");
         x.style.display = "block";
 
+        var y = document.getElementById("resultCards");
+        y.style.display = "block";
+
+
     });
 }
 
@@ -71,6 +75,11 @@ document.getElementById("museums").onclick = function() {
         document.getElementById("Info").appendChild(placeToVisit);
         console.log(data.name);
 
+        var x = document.getElementById("goButton");
+        x.style.display = "block";
+
+        var y = document.getElementById("resultCards");
+        y.style.display = "block";
 
     });
 }
@@ -107,6 +116,12 @@ document.getElementById("shows").onclick = function() {
         document.getElementById("Info").appendChild(placeToVisit);
         console.log(data.name);
 
+        var x = document.getElementById("goButton");
+        x.style.display = "block";
+
+        var y = document.getElementById("resultCards");
+        y.style.display = "block";
+
     });
 }
 
@@ -142,6 +157,12 @@ document.getElementById("history").onclick = function() {
         document.getElementById("Info").appendChild(placeToVisit);
         console.log(data.name);
 
+        var x = document.getElementById("goButton");
+        x.style.display = "block";
+
+        var y = document.getElementById("resultCards");
+        y.style.display = "block";
+
     });
 }
 
@@ -176,6 +197,12 @@ document.getElementById("active").onclick = function() {
         document.getElementById("Info").innerHTML = ""
         document.getElementById("Info").appendChild(placeToVisit);
         console.log(data.name);
+
+        var x = document.getElementById("goButton");
+        x.style.display = "block";
+
+        var y = document.getElementById("resultCards");
+        y.style.display = "block";
 
     });
 }

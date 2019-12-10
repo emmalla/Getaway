@@ -24,7 +24,7 @@ const flightRoutes = require('./API/routes/flights');
 const OAuth = require('./API/routes/google');
 const callbacks = require('./API/routes/callback');
 const where2 = require('./API/routes/where');
-const accountt = require('/API/routes/account');
+const accountt = require('./API/routes/account');
 
 
 app.use('/flights', flightRoutes);

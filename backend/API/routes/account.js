@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-var request = require("request");
+var request = require("request")
 
 router.get('/', (req, res, next) => {
     var options = {

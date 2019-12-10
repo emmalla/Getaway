@@ -43,6 +43,7 @@ request(options, function (error, response, body) {
   console.log(req.session.lat)
   console.log(req.session.lon)
   console.log(req.session.id)
+  console.log(req.session)
   var options = { method: 'PUT',
   url: 'http://localhost:3002/person/' + req.session.email,
   headers: 

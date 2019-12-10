@@ -5,6 +5,7 @@ const router = express.Router();
 // use request-promise in final code! sorry not for demo
 
 var request = require("request");
+var bodytrue = true;
 
 router.get('/', (req, res, next) => {
   var options = {
@@ -67,7 +68,34 @@ router.get('/', (req, res, next) => {
       req.session.email = body.emailAddresses[0].value;
       req.session.save();
       console.log(req.session)
+      var options = { method: 'GET',
+  url: 'http://localhost:3002/person/' + req.session.email,
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     Cookie: 'connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E',
+     'Content-Length': '59',
+     'Accept-Encoding': 'gzip, deflate',
+     Host: 'localhost:3002',
+     'Postman-Token': '650760c1-b37b-4df9-adfb-eba8e7d24468,f9d8cde4-1d6d-455f-812e-79e49e9eb6ad',
+     'Cache-Control': 'no-cache',
+     Accept: '*/*',
+     'User-Agent': 'PostmanRuntime/7.20.1',
+     'Content-Type': 'application/json' } };
 
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+  console.log('this is body')
+  console.log(body)
+  console.log(bodytrue);
+  if (body == []){
+    bodytrue = false;
+  }else{bodytrue = true}
+  console.log(bodytrue)
+  console.log(body);
+});
+
+if(bodytrue == false) {
 
       var options = {
         method: 'POST',
@@ -95,7 +123,9 @@ router.get('/', (req, res, next) => {
         console.log("here")
         console.log(body)
       });
+    }
     });
+  
     console.log(req.session);
   });
   console.log('this is the session id')

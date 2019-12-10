@@ -3,9 +3,11 @@
 <!-- BLOCK COMMENT-->
 <head>
 	<meta charset="utf-8" />
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<link rel="stylesheet" href="styles/main.css">
     <title>G3TAWAY</title>
 </head>
+
 <body>
     <header>
         <img id="headerImage" src="images/plane.png" alt="Picture of a Plane" class="responsive">
@@ -16,22 +18,31 @@
 
     <div class="navbar" id="menu">
         <ul>
-			<li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
 			<li><a href="userPage.html">New Trip</a></li>
-            <li><a class="displaying" href="email.html">Subscribe</a></li>
+            <li><a href="go.html">Flights</a></li>
+			<li><a class="displaying" href="email.html">Account</a></li>
         </ul>
     </div>
 
 	<div class="Subscribe">
-		<form action="Subscribe.html">
-	   		<h1>Please enter the following information.</h1>
-			<p class="required">First Name: <input type="text" name="firstName" required autofocus placeholder="John"></p>
-			<p class="required">Last Name: <input type="text" name="lastName" required placeholder="Doe"></p>
-	   		<p class="required">E-Mail: <input type="email" name="email" required placeholder="example@email.com"></p>
-			<p>Zipcode: <input type="text" name="zipcode" pattern="[0-9]{5}" maxlength="5" placeholder="Optional: 99999"></p>
-	   		<p><input id="submitButton" type="submit" name="submit" value="Subscribe"></p>
-   		</form>
+		<div class="imgcontainer2">
+  	    	<img src="images/login_avatar.png" alt="Avatar" class="avatar">
+  	  	</div>
+		<div class="accountInfo">
+			<form action="#">
+		   		<h1>Please enter the following information.</h1>
+				<p class="required" id="userFirstName">First Name: </p>
+				<p class="required" id="userLastName">Last Name: </p>
+		   		<p class="required" id="userEmail">E-Mail: </p>
+				<p class="required" id="userLocation">Last Location: </p>
+	   		</form>
+		</div>
 	</div>
+
+	<script src="../Scripts/onSignIn.js"></script>
+
+
 
 
 

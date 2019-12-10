@@ -1,3 +1,4 @@
+<!-- might delete -->
 {
     "request":{"departureAirport":{"requestedCode":"BOS","fsCode":"BOS"},"arrivalAirport":{"requestedCode":"LHR","fsCode":"LHR"},"codeType":{},"departing":true,"date":{"year":"2019","month":"10","day":"25","interpreted":"2019-10-25"},"url":"https://api.flightstats.com/flex/schedules/rest/v1/json/from/BOS/to/LHR/departing/2019/10/25"},
     "scheduledFlights":[

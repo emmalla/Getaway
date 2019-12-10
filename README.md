@@ -1,3 +1,3 @@
 # CS411
 
-Emily Mallaber, Elsa Jaysing, Chris-Emio Raymond, Xinyu Ren
+Emily Mallaber, Elsa Jaysing, Chris-Emio Raymond

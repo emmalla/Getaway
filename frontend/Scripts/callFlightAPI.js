@@ -2,7 +2,7 @@ var settings = {
     "async": true,
     "crossDomain": true,
     //"url": "http://localhost:3000/flights/", for demo, use LHR
-    "url": "http://localhost:3000/flights/LHR",
+    "url": "http://localhost:3000/flights/",
     "method": "GET",
     "headers": {
       "Content-Type": "application/json",

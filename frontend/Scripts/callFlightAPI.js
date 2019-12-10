@@ -1,9 +1,9 @@
-document.getElementById("goButton").onclick = function() {
-    location.href='go.html'
+//document.getElementById("goButton").onclick = function() {
+    //location.href='go.html'
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:3000/flights/",
+    "url": "http://localhost:3000/flights/LHR",
     "method": "GET",
     "headers": {
       "Content-Type": "application/json",
@@ -61,4 +61,4 @@ var settings = {
 console.log(data);
 
 });
-}
+//}

@@ -6,6 +6,8 @@ var request = require("request");
 var code = "";
 
 router.get('/LHR', (req, res, next) => {
+
+  console.log(req.session)
     var request = require("request");
 
 var options = { method: 'GET',
@@ -30,6 +32,7 @@ var options = { method: 'GET',
     json:true};
 
 request(options, function (error, response, body) {
+  
   if (error) throw new Error(error);
 
   console.log(body);

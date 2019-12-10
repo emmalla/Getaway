@@ -24,13 +24,13 @@ var settings = {
 
     // fix data.obj.loc
 
-    
+
     console.log(data.obj);
 
 
     document.getElementById("userFirstName").innerHTML += data.user.name;
     document.getElementById("userEmail").innerHTML += data.user.email;
-    document.getElementById("userLocation").innerHTML += data.obj.loc;
+    document.getElementById("userLocation").innerHTML += data.obj.name;
 
 
 });

@@ -16,6 +16,7 @@ app.listen(3002, () => {
 const User = Mongoose.model("person", {
   name: String,
   email: String,
+  loc: Object
 
 });
 

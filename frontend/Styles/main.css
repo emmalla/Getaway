@@ -267,6 +267,19 @@
      margin: 24px 0 100px 0;
    }
 
+    .imgcontainer2 {
+        text-align: center;
+        margin-top: 1em;
+        display: inline-block;
+        position: relative;
+    }
+
+    .accountInfo
+    {
+        margin-top: 5em;
+        position: relative;
+    }
+
    img.avatar {
        padding-left: 24px;
        padding-right: 24px;

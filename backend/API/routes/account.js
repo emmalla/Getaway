@@ -53,6 +53,7 @@ request(options, function (error, response, body) {
 if (error) throw new Error(error);
 
 console.log(body);
+res.redirect('http://localhost:3001/index')
 });
 
     

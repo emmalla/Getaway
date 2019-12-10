@@ -1,3 +1,7 @@
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res, next) => {
 var options = { method: 'GET',
   url: 'http://localhost:3002/person/'+req.session.email,
   headers: 
@@ -18,6 +22,7 @@ request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
   console.log(body);
+});
 });
 
 module.exports(router);

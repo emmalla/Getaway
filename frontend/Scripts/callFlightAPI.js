@@ -1,5 +1,3 @@
-//document.getElementById("goButton").onclick = function() {
-    //location.href='go.html'
 var settings = {
     "async": true,
     "crossDomain": true,
@@ -24,40 +22,49 @@ var settings = {
   }
   $.ajax(settings).done(function( data ) {
     document.getElementById("Header").innerHTML = "Flight Info";
+        if (data.AirlineFlightSchedulesResult.data <= 0)
+        {
+            var res = document.createElement("P");
+            res.innerHTML = "There no flights found for your destination right now";
 
-    for (var i = 0; i < 15; i++) {
-        var departureTimeDate = new Date(data.AirlineFlightSchedulesResult.data[i].departuretime * 1000);
-        departureDateString = departureTimeDate.toGMTString();
-        var dtimep = document.createElement("P");
-        dtimep.innerHTML = "Departure time is " + departureDateString;
+            document.getElementById("Info").appendChild(res);
+        } else
+        {
 
-        departureTerminal = data.AirlineFlightSchedulesResult.data[i].origin
-        var dterminalp = document.createElement("P");
-        dterminalp.innerHTML = "Departure terminal is " + departureTerminal;
+                for (var i = 0; i < 15; i++) {
+                    var departureTimeDate = new Date(data.AirlineFlightSchedulesResult.data[i].departuretime * 1000);
+                    departureDateString = departureTimeDate.toGMTString();
+                    var dtimep = document.createElement("P");
+                    dtimep.innerHTML = "Departure time is " + departureDateString;
 
-        var arrivalTimeDate = new Date(data.AirlineFlightSchedulesResult.data[i].arrivaltime * 1000);
-        arrivalDateString = arrivalTimeDate.toGMTString();
-        dterminalp.innerHTML = "Departure airport is " + departureTerminal;
-        arrivalTime = data.AirlineFlightSchedulesResult.data[i].arrivaltime
-        
-        var atimep = document.createElement("P");
-        atimep.innerHTML = "Arrival time is " + arrivalDateString;
-        arrivalTerminal = data.AirlineFlightSchedulesResult.data[i].destination
-        var aterminalp = document.createElement("P");
-        aterminalp.innerHTML = "Arrival airport is " + arrivalTerminal;
+                    departureTerminal = data.AirlineFlightSchedulesResult.data[i].origin
+                    var dterminalp = document.createElement("P");
+                    dterminalp.innerHTML = "Departure terminal is " + departureTerminal;
+
+                    var arrivalTimeDate = new Date(data.AirlineFlightSchedulesResult.data[i].arrivaltime * 1000);
+                    arrivalDateString = arrivalTimeDate.toGMTString();
+                    dterminalp.innerHTML = "Departure airport is " + departureTerminal;
+                    arrivalTime = data.AirlineFlightSchedulesResult.data[i].arrivaltime
+
+                    var atimep = document.createElement("P");
+                    atimep.innerHTML = "Arrival time is " + arrivalDateString;
+                    arrivalTerminal = data.AirlineFlightSchedulesResult.data[i].destination
+                    var aterminalp = document.createElement("P");
+                    aterminalp.innerHTML = "Arrival airport is " + arrivalTerminal;
 
 
-        var separator = document.createElement("P");
-        separator.innerHTML = "__________________________________________";
+                    var separator = document.createElement("P");
+                    separator.innerHTML = "__________________________________________";
 
-        document.getElementById("Info").appendChild(dtimep);
-        document.getElementById("Info").appendChild(dterminalp);
-        document.getElementById("Info").appendChild(atimep);
-        document.getElementById("Info").appendChild(aterminalp);
-        document.getElementById("Info").appendChild(separator)
+                    document.getElementById("Info").appendChild(dtimep);
+                    document.getElementById("Info").appendChild(dterminalp);
+                    document.getElementById("Info").appendChild(atimep);
+                    document.getElementById("Info").appendChild(aterminalp);
+                    document.getElementById("Info").appendChild(separator)
 
-    }
+                }
 
+        }
 console.log(data);
 
 });

@@ -27,7 +27,8 @@ app.post("/person", async (request, response, next) => {
     console.log(request.query.name);
     var person = new User({
       name: request.query.name,
-      email: request.query.email
+      email: request.query.email,
+      loc: null
     });
     console.log(person);
     var result = await person.save();
@@ -66,6 +67,7 @@ app.put("/person/:email", async (request, response, next) => {
     var person = await User.findOne({email: request.params.email}).exec();
     person.set(request.body);
     var result = await person.save();
+    console.log("arrive")
     response.send(result);
   } catch (error) {
     response.status(500).send(error);

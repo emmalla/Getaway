@@ -15,10 +15,10 @@ router.get('/nature',(req, res, next) => {
     var options = { method: 'GET',
   url: 'http://api.opentripmap.com/0.1/en/places/bbox',
   qs: 
-   { lon_min: '-125',
-     lat_min: '25',
-     lon_max: '-115',
-     lat_max: '42',
+   { lon_min: '-2',
+     lat_min: '48',
+     lon_max: '0',
+     lat_max: '52',
      kinds: 'natural',
      format: 'json',
      apikey: '5ae2e3f221c38a28845f05b6680bb28f85eb9d9eedd9330416422bf5' },
@@ -80,10 +80,10 @@ res.status(200).json(body[randomnumber]);
     var options = { method: 'GET',
   url: 'http://api.opentripmap.com/0.1/en/places/bbox',
   qs: 
-   { lon_min: '30',
-     lat_min: '-15',
-     lon_max: '75',
-     lat_max: '30',
+   { lon_min: '-1',
+     lat_min: '50',
+     lon_max: '1',
+     lat_max: '52',
      kinds: 'museums',
      format: 'json',
      apikey: '5ae2e3f221c38a28845f05b6680bb28f85eb9d9eedd9330416422bf5' },
@@ -100,7 +100,8 @@ res.status(200).json(body[randomnumber]);
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
-  var randomnumber=Math.floor(Math.random()*501);
+  //var randomnumber=Math.floor(Math.random()*501);
+  var randomnumber = 50
   console.log(body[randomnumber]);
   req.session.lat = body[randomnumber].point.lat;
   req.session.lon = body[randomnumber].point.lon;
@@ -108,6 +109,8 @@ request(options, function (error, response, body) {
   console.log(req.session.lat)
   console.log(req.session.lon)
   console.log(req.session.id)
+  console.log(randomnumber)
+  
   var options = { method: 'PUT',
   url: 'http://localhost:3002/person/' + req.session.email,
   headers: 

@@ -45,7 +45,8 @@ request(options, function (error, response, body) {
   console.log(req.session.lon)
   console.log(req.session.id)
   console.log(req.session)
-  var options = { method: 'PUT',
+  console.log(randomnumber)
+  /*var options = { method: 'PUT',
   url: 'http://localhost:3002/person/' + req.session.email,
   headers: 
    { 'cache-control': 'no-cache',
@@ -66,7 +67,7 @@ request(options, function (error, response, body) {
   console.log("hi")
   console.log(options.body);
 });
-console.log("made it to the end")
+console.log("made it to the end")*/
 res.status(200).json(body[randomnumber]);
 });
 

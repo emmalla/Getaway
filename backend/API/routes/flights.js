@@ -79,7 +79,7 @@ var options = { method: 'GET',
   qs: 
    { startDate: '1576007032',
      endDate: '1576093432',
-     origin: 'LGA',
+     origin: 'BOS',
      destination: code,
      howMany: '15',
      offset: '0' },

@@ -40,7 +40,7 @@ request(options, function (error, response, body) {
  
 
 router.get('/',(req, res, next) => {
-  console.log(req.session.id)
+  console.log(req.session)
 
 var options = { method: 'GET',
   url: 'http://iatageo.com/getCode/' + req.session.lat + '/' + req.session.lon,

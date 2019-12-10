@@ -98,6 +98,8 @@ router.get('/', (req, res, next) => {
     });
     console.log(req.session);
   });
+  console.log('this is the session id')
+  console.log(req.session.id)
   res.redirect("http://localhost:3001");
 });
 module.exports = router;

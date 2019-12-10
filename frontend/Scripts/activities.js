@@ -1,5 +1,27 @@
 document.getElementById("nature").onclick = function() {
-    $.getJSON( "http://localhost:3000/where/nature", function( data ) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:3000/where/nature",
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json",
+          "User-Agent": "PostmanRuntime/7.20.1",
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Postman-Token": "98d71482-bdcd-4e03-aa1a-d712e32d3c26,0fb3f995-c8ee-4248-ae64-6c4b6dd96a8d",
+          "Cookie": "connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E",
+          "Referer": "http://localhost:3000/flights/",
+          "Connection": "keep-alive",
+          "cache-control": "no-cache"
+        },
+        'xhrFields': {
+            'withCredentials': true
+        },
+        "processData": false,
+        "data": ""
+      }
+      $.ajax(settings).done(function( data ) {
         document.getElementById("Header").innerHTML = "Nature";
         name = data.name
         var placeToVisit = document.createElement("P");
@@ -18,7 +40,29 @@ document.getElementById("nature").onclick = function() {
 
 
 document.getElementById("museums").onclick = function() {
-    $.getJSON( "http://localhost:3000/where/museums", function( data ) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:3000/where/museums",
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json",
+          "User-Agent": "PostmanRuntime/7.20.1",
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Postman-Token": "98d71482-bdcd-4e03-aa1a-d712e32d3c26,0fb3f995-c8ee-4248-ae64-6c4b6dd96a8d",
+          "Cookie": "connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E",
+          "Referer": "http://localhost:3000/flights/",
+          "Connection": "keep-alive",
+          "cache-control": "no-cache"
+        },
+        'xhrFields': {
+            'withCredentials': true
+        },
+        "processData": false,
+        "data": ""
+      }
+      $.ajax(settings).done(function( data ) {
         document.getElementById("Header").innerHTML = "Museums";
         name = data.name
         var placeToVisit = document.createElement("P");
@@ -32,7 +76,29 @@ document.getElementById("museums").onclick = function() {
 }
 
 document.getElementById("shows").onclick = function() {
-    $.getJSON( "http://localhost:3000/where/shows", function( data ) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:3000/where/shows",
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json",
+          "User-Agent": "PostmanRuntime/7.20.1",
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Postman-Token": "98d71482-bdcd-4e03-aa1a-d712e32d3c26,0fb3f995-c8ee-4248-ae64-6c4b6dd96a8d",
+          "Cookie": "connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E",
+          "Referer": "http://localhost:3000/flights/",
+          "Connection": "keep-alive",
+          "cache-control": "no-cache"
+        },
+        'xhrFields': {
+            'withCredentials': true
+        },
+        "processData": false,
+        "data": ""
+      }
+      $.ajax(settings).done(function( data ) {
         document.getElementById("Header").innerHTML = "Entertainment";
         name = data.name
         var placeToVisit = document.createElement("P");
@@ -45,7 +111,29 @@ document.getElementById("shows").onclick = function() {
 }
 
 document.getElementById("history").onclick = function() {
-    $.getJSON( "http://localhost:3000/where/history", function( data ) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:3000/where/history",
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json",
+          "User-Agent": "PostmanRuntime/7.20.1",
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Postman-Token": "98d71482-bdcd-4e03-aa1a-d712e32d3c26,0fb3f995-c8ee-4248-ae64-6c4b6dd96a8d",
+          "Cookie": "connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E",
+          "Referer": "http://localhost:3000/flights/",
+          "Connection": "keep-alive",
+          "cache-control": "no-cache"
+        },
+        'xhrFields': {
+            'withCredentials': true
+        },
+        "processData": false,
+        "data": ""
+      }
+      $.ajax(settings).done(function( data ) {
         document.getElementById("Header").innerHTML = "History";
         name = data.name
         var placeToVisit = document.createElement("P");
@@ -58,7 +146,29 @@ document.getElementById("history").onclick = function() {
 }
 
 document.getElementById("active").onclick = function() {
-    $.getJSON( "http://localhost:3000/where/active", function( data ) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost:3000/where/active",
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json",
+          "User-Agent": "PostmanRuntime/7.20.1",
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Postman-Token": "98d71482-bdcd-4e03-aa1a-d712e32d3c26,0fb3f995-c8ee-4248-ae64-6c4b6dd96a8d",
+          "Cookie": "connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E",
+          "Referer": "http://localhost:3000/flights/",
+          "Connection": "keep-alive",
+          "cache-control": "no-cache"
+        },
+        'xhrFields': {
+            'withCredentials': true
+        },
+        "processData": false,
+        "data": ""
+      }
+      $.ajax(settings).done(function( data ) {
         document.getElementById("Header").innerHTML = "Active";
         name = data.name
         var placeToVisit = document.createElement("P");

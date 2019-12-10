@@ -27,9 +27,35 @@ router.get('/', (req, res, next) => {
         if (error) throw new Error(error);
 
         console.log(body);
-        res.status(200).json(body);
+        test = {user: body, obj: req.session.obj};
+        console.log(test)
+        res.status(200).json(test);
     });
     
 });
 
+
+router.get('/delete', (req, res, next) => {var options = { method: 'DELETE',
+url: 'http://localhost:3002/person/' + req.session.email,
+headers: 
+ { 'cache-control': 'no-cache',
+   Connection: 'keep-alive',
+   'Content-Length': '0',
+   Cookie: 'connect.sid=s%3AlheecWbTzeP7B0YTJneawkcFHSH8V3RK.RwVfY0vLOH3yFd0QeJ51w7fPWNu3J6wsaUYbxA6jU9E',
+   'Accept-Encoding': 'gzip, deflate',
+   Host: 'localhost:3002',
+   'Postman-Token': 'fc9b10f0-5b58-4f11-a183-dfb04b077de9,8eeb34bb-e80d-4cf6-865e-01e9d7467cf7',
+   'Cache-Control': 'no-cache',
+   Accept: '*/*',
+   'User-Agent': 'PostmanRuntime/7.20.1' } };
+
+request(options, function (error, response, body) {
+if (error) throw new Error(error);
+
+console.log(body);
+res.redirect('http://localhost:3001/index')
+});
+
+    
+});
 module.exports = router;

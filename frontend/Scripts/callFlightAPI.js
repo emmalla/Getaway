@@ -1,8 +1,7 @@
 var settings = {
     "async": true,
     "crossDomain": true,
-    //"url": "http://localhost:3000/flights/", for demo, use LHR
-    "url": "http://localhost:3000/flights/",
+    "url": "http://localhost:3000/flights/LHR",
     "method": "GET",
     "headers": {
       "Content-Type": "application/json",
@@ -26,7 +25,7 @@ var settings = {
         if (data.AirlineFlightSchedulesResult.data <= 0)
         {
             var res = document.createElement("P");
-            res.innerHTML = "There no flights found for your destination right now";
+            res.innerHTML = "There no flights found for your destination right now.";
 
             document.getElementById("Info").appendChild(res);
         } else

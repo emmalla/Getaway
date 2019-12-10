@@ -24,6 +24,10 @@ const User = Mongoose.model("person", {
 app.post("/person", async (request, response, next) => {
 
   try {
+    var user = await User.findOne({email: request.body.email});
+    if (user) {
+        response.status(400).send("Email already in use!");
+    } else { 
     console.log(request.query.name);
     var person = new User({
       name: request.query.name,
@@ -32,14 +36,10 @@ app.post("/person", async (request, response, next) => {
     });
     console.log(person);
     var result = await person.save();
-
     response.send(result);
-
-
+    }
   } catch (error) {
-
     response.status(500).send(error);
-
   }
 
 });
